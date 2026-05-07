@@ -459,6 +459,106 @@
         .card-arrow { margin-top: 20px; display: flex; align-items: center; gap: 8px; color: var(--primary); font-weight: 500; opacity: 0; transform: translateX(-10px); transition: all 0.3s; }
         .service-card:hover .card-arrow { opacity: 1; transform: translateX(0); }
 
+        /* Projects Section */
+        .projects {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background: var(--bg-light);
+            border-radius: 28px;
+            padding: 32px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #EFF3F8;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.1);
+            border-color: var(--primary-light);
+        }
+
+        .project-image {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-light);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .project-image i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .project-badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .project-tech span {
+            background: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .project-links {
+            border-top: 1px solid #EFF3F8;
+            padding-top: 20px;
+        }
+
+        .project-link {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.3s;
+        }
+
+        .project-link:hover {
+            gap: 12px;
+        }
+
         .solution-detail { padding: 160px 0 80px; min-height: 100vh; }
         .solution-detail.hidden { display: none; }
         .btn-back { display: inline-flex; align-items: center; gap: 8px; background: transparent; border: 1.5px solid var(--gray-light); color: var(--gray); padding: 10px 24px; border-radius: 40px; font-weight: 500; text-decoration: none; transition: all 0.3s ease; margin-bottom: 32px; cursor: pointer; }
@@ -530,6 +630,7 @@
             <ul class="nav-links">
                 <li><a href="#" onclick="showMainContent(); return false;">Accueil</a></li>
                 <li><a href="#" onclick="showMainContent(); return false;">Services</a></li>
+                <li><a href="#" onclick="showMainContent(); return false;">Projets</a></li>
                 <li><a href="#" onclick="showMainContent(); return false;">Expertise</a></li>
                 <li><a href="#" onclick="showMainContent(); return false;">Contact</a></li>
             </ul>
@@ -598,6 +699,45 @@
                     <p>Déploiement scalable, CI/CD, conteneurisation.</p>
                     <div class="card-arrow">Découvrir <i class="fas fa-arrow-right"></i></div>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PROJETS RÉCENTS -->
+    <section id="projets" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projets récents</h2>
+            <p class="section-sub">Quelques réalisations qui démontrent mon expertise technique</p>
+            <div class="projects-grid">
+                <!-- Projet 1 - Dashboard Analytics -->
+                <div class="project-card">
+                    <div class="project-image"><i class="fas fa-chart-line"></i></div>
+                    <div class="project-badge">Dashboard Analytics</div>
+                    <h3>Dashboard SaaS - NexAnalytics</h3>
+                    <p>Plateforme d'analyse de données en temps réel avec visualisations interactives et rapports automatisés.</p>
+                    <div class="project-tech"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Socket.io</span></div>
+                    <div class="project-links"><a href="#" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a></div>
+                </div>
+
+                <!-- Projet 2 - Chatbot IA -->
+                <div class="project-card">
+                    <div class="project-image"><i class="fas fa-robot"></i></div>
+                    <div class="project-badge">IA & Machine Learning</div>
+                    <h3>Chatbot Intelligent - Support IA</h3>
+                    <p>Assistant virtuel pour support client avec traitement du langage naturel et apprentissage continu.</p>
+                    <div class="project-tech"><span>Python</span><span>TensorFlow</span><span>FastAPI</span><span>Docker</span></div>
+                    <div class="project-links"><a href="#" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a></div>
+                </div>
+
+                <!-- Projet 3 - E-commerce -->
+                <div class="project-card">
+                    <div class="project-image"><i class="fas fa-store"></i></div>
+                    <div class="project-badge">E-commerce</div>
+                    <h3>Plateforme E-commerce - ShopHub</h3>
+                    <p>Solution complète de vente en ligne avec paiements sécurisés, gestion de stock et tableau de bord admin.</p>
+                    <div class="project-tech"><span>Next.js</span><span>PostgreSQL</span><span>Stripe</span><span>AWS</span></div>
+                    <div class="project-links"><a href="#" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a></div>
+                </div>
             </div>
         </div>
     </section>
@@ -704,7 +844,7 @@
             changelogData = [{
                 version: "v1.0.0",
                 date: new Date().toISOString(),
-                description: "🚀 Lancement initial du site NexGen | Cianney\n- Structure complète du portfolio\n- Système d'analytics intégré\n- Pages solutions interactives\n- Design responsive et moderne",
+                description: "🚀 Lancement initial du site NexGen | Cianney\n- Structure complète du portfolio\n- Système d'analytics intégré\n- Pages solutions interactives\n- Section projets récents\n- Design responsive et moderne",
                 files: "index.html"
             }];
             saveChangelog();
